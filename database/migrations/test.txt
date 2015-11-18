@@ -1,0 +1,1 @@
+$post = App\Post::create(['content' => 'Test content vdm', 'author' => 'Kitchup', 'date' => Carbon\Carbon::now(), 'vdm_id' => 254]);
