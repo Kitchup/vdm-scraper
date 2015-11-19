@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::any('adminer', '\Miroc\LaravelAdminer\AdminerController@Index');
+
+Route::group(['prefix' => 'api/'], function (){
+	Route::resource('posts', 'Vdm\VdmController');
+});
+

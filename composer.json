@@ -52,6 +52,9 @@
     },
     "require-dev": {
         "sunra/php-simple-html-dom-parser": "v1.5.0",
-        "miroc/laravel-adminer": "dev-master"
+        "nesbot/carbon": "~1.14",
+        "miroc/laravel-adminer": "dev-master",
+        "anahkiasen/underscore-php": "dev-master",
+        "phpunit/phpunit": "4.8.*"
     }
 }

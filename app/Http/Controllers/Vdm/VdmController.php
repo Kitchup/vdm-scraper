@@ -2,42 +2,48 @@
 
 namespace App\Http\Controllers\Vdm;
 
+use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Vdm\ApiController;
+use App\Transformers\PostTransformer;
+use App\Repositories\PostRepository;
 
-class VdmController extends Controller
+use Underscore\Types\Arrays;
+use Vdm\Scraper;
+
+class VdmController extends ApiController
 {
+    /**
+     * The Post transformer
+     *
+     * @var PostTransformer
+     */   
+    protected $postTransformer;
+
+    /**
+     * The Post repository
+     *
+     * @var PostRepository
+     */
+    protected $postRepository;
+
+    function __construct(PostTransformer $postTransformer, PostRepository $postRepository)
+    {
+        $this->postTransformer = $postTransformer;
+        $this->postRepository = $postRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-    }
+        $posts = $this->postRepository->filter($request->all());
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return $this->respondWithCount($posts, ['posts' => $this->postTransformer->transformCollection($posts->all())]);
     }
 
     /**
@@ -48,40 +54,10 @@ class VdmController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $post = $this->postRepository->find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        if(!$post){ return $this->respondNotFound();}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return $this->respond(['post' => $this->postTransformer->transform($post)]);
     }
 }
