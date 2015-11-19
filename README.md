@@ -1,5 +1,5 @@
 # vdm-scraper
-A simple Vdm web scraper in Laravel 5.1 [VDM](http://www.viedemerde.fr/page?=0)
+A simple Vdm web scraper in Laravel 5.1 [VDM](http://www.viedemerde.fr/?page=0)
 
 ## Installing
 
@@ -27,8 +27,9 @@ VDM posts are accessible with different parameters and using different routes
 	[
 		{
 			"id":1,
-			"content":"Aujourd'hui, mon beau fils de 4 ans me demande si je suis sa nouvelle maman. Je lui explique donc qu'on n'a qu'une seule maman et que je suis sa belle-maman. "Bah moi, je te trouve moche.; VDM",
-			"date":"2015-11-18 12:56:00","author":"apaogi"
+			"content":"Aujourd'hui, mon beau fils de 4 ans me demande si je suis sa nouvelle maman. Je lui explique donc qu'on n'a qu'une seule maman et que je suis sa belle-maman. Bah moi, je te trouve moche. VDM",
+			"date":"2015-11-18 12:56:00",
+			"author":"apaogi"
 		}
 	],
 	"count":1
@@ -43,8 +44,9 @@ VDM posts are accessible with different parameters and using different routes
 	"post":
 	{
 		"id":1,
-		"content":"Aujourd'hui, mon beau fils de 4 ans me demande si je suis sa nouvelle maman. Je lui explique donc qu'on n'a qu'une seule maman et que je suis sa belle-maman. "Bah moi, je te trouve moche.; VDM",
-		"date":"2015-11-18 12:56:00","author":"apaogi"
+		"content":"Aujourd'hui, mon beau fils de 4 ans me demande si je suis sa nouvelle maman. Je lui explique donc qu'on n'a qu'une seule maman et que je suis sa belle-maman. Bah moi, je te trouve moche. VDM",
+		"date":"2015-11-18 12:56:00",
+		"author":"apaogi"
 	}
 }
 ```
