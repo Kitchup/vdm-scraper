@@ -13,13 +13,13 @@ A simple Vdm web scraper in Laravel 5.1 [VDM](http://www.viedemerde.fr/?page=0)
 
 **Fetching VDM articles**
 
-Use the command 'php artisan vdm:scrap' from the root directory to saves the 200 last VDM posts into the database.
+Use the command **php artisan vdm:scrap** from the root directory to save the 200 last VDM posts into the database.
 
 **Using the API**
 
 VDM posts are accessible with different parameters and using different routes
 
-* **/api/posts : lists all the posts**
+* **/api/posts** : *lists all the posts*
 
 ```json
 {
@@ -37,7 +37,7 @@ VDM posts are accessible with different parameters and using different routes
 ```
 
 
-* **/api/posts/id : lists one post given its internal id (not his actual vdm id)**
+* **/api/posts/id** : *lists one post given its internal id (not his actual vdm id)*
 
 ```json
 {
@@ -51,11 +51,11 @@ VDM posts are accessible with different parameters and using different routes
 }
 ```
 
-* **/api/posts?from=yyyy-mm-dd : lower limit to filter posts by date**
-* **/api/posts?to=yyyy-mm-dd : upper limit to filter posts by date**
-* **/api/posts?author=name : lists all posts for given author name**
+* **/api/posts?from=yyyy-mm-dd** : *lower limit to filter posts by date*
+* **/api/posts?to=yyyy-mm-dd** : *upper limit to filter posts by date*
+* **/api/posts?author=name** : *lists all posts for given author name*
 
 **Unit Testing**
 
-Several tests are ready to be run for Scraper.php and VdmController.php, for this go to the root folder and execute the command 'vendor/bin/phpunit tests/file.php '.
+Several tests are ready to be run for Scraper.php and VdmController.php, for this go to the root folder and execute the **vendor/bin/phpunit tests/file.php**.
 
