@@ -9,6 +9,11 @@ A simple Vdm web scraper in Laravel 5.1 [VDM](http://www.viedemerde.fr/?page=0)
 4. Set up the database properties in your own vdm-scraper/.env file
 5. Install all composer packages using the composer.json file included
 
+**Extra help**
+
+* Don't forget to run **composer install** and **composer update** to build dependencies.
+* If you run into a cipher error try **php artisan generate:key**
+
 ##Usage
 
 **Fetching VDM articles**
