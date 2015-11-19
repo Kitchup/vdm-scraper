@@ -31,7 +31,7 @@ class ApiController extends Controller
     * @param int $status : HTTP status code
     * @return    $this   : returns object calls chaining
     */
-    public function setStatusCode($c){
+    public function setStatusCode($status){
         $this->statusCode=$status;
         return $this;
     }  
