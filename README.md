@@ -1,13 +1,13 @@
 # vdm-scraper
-A simple Vdm web scraper in Laravel 5.1 [http://www.viedemerde.fr/page?=0](VDM)
+A simple Vdm web scraper in Laravel 5.1 [VDM](http://www.viedemerde.fr/page?=0)
 
 ## Installing
 
-1. Install Laravel 5.1 [http://laravel.com/docs/5.1](Laravel Doc)
+1. Install Laravel 5.1 [Laravel Doc](http://laravel.com/docs/5.1)
 2. Clone this repository
 3. Pick your favorite database option in the config/database.php file
 4. Set up the database properties in your own vdm-scraper/.env file
-5. Install all the composer packages using the composer.json file included
+5. Install all composer packages using the composer.json file included
 
 ##Usage
 
@@ -19,9 +19,9 @@ Use the command 'php artisan vdm:scrap' from the root directory to saves the 200
 
 VDM posts are accessible with different parameters and using different routes
 
-* /api/posts : lists all the posts
+* **/api/posts : lists all the posts**
 
-'''json
+```json
 {
 	"post": 
 	[
@@ -33,12 +33,12 @@ VDM posts are accessible with different parameters and using different routes
 	],
 	"count":1
 }
-'''
+```
 
 
-* /api/posts/<id> : lists one post given its internal id (not his actual vdm id)
+* **/api/posts/id : lists one post given its internal id (not his actual vdm id)**
 
-'''json
+```json
 {
 	"post":
 	{
@@ -47,12 +47,13 @@ VDM posts are accessible with different parameters and using different routes
 		"date":"2015-11-18 12:56:00","author":"apaogi"
 	}
 }
-'''
+```
 
-* /api/posts?from=<yyyy-mm-dd> : lower limit to filter posts by date
-* /api/posts?to=<yyyy-mm-dd> : upper limit to filter posts by date
-* /api/posts?author=<name> : lists all posts for given author name
+* **/api/posts?from=yyyy-mm-dd : lower limit to filter posts by date**
+* **/api/posts?to=yyyy-mm-dd : upper limit to filter posts by date**
+* **/api/posts?author=name : lists all posts for given author name**
 
 **Unit Testing**
+
 Several tests are ready to be run for Scraper.php and VdmController.php, for this go to the root folder and execute the command 'vendor/bin/phpunit tests/file.php '.
 
